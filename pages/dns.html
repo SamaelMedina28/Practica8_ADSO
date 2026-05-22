@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es" class="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DNS Info - Servidor Web</title>
-  
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -29,10 +30,12 @@
       }
     }
   </script>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
-  
+
   <!-- Script Modo Oscuro -->
   <script>
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -53,33 +56,53 @@
   </script>
 </head>
 
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-200 transition-colors duration-300 antialiased font-sans">
+<body
+  class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-200 transition-colors duration-300 antialiased font-sans">
 
   <!-- Floating Navigation -->
-  <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+  <nav
+    class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16 items-center">
         <!-- Logo -->
         <a href="../index.html" class="flex-shrink-0 flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-indigo-600 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+          <div
+            class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-indigo-600 flex items-center justify-center text-white font-bold text-xl shadow-lg">
             S
           </div>
           <span class="font-bold text-xl tracking-tight text-slate-900 dark:text-white">ServidorWeb</span>
         </a>
-        
+
         <!-- Enlaces -->
         <div class="hidden md:flex space-x-8">
-          <a href="../index.html" class="text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white font-medium transition-colors">Inicio</a>
+          <a href="../index.html"
+            class="text-slate-500 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white font-medium transition-colors">Inicio</a>
           <a href="dns.html" class="text-brand-600 dark:text-brand-500 font-semibold transition-colors">DNS Info</a>
+          <a href="servidores-web.html"
+            class="text-slate-500 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white font-medium transition-colors">Servidores
+            Web</a>
+          <a href="certificados-ssl.html"
+            class="text-slate-500 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white font-medium transition-colors">Certificados
+            SSL</a>
         </div>
 
         <!-- Theme Toggle -->
         <div>
-          <button onclick="toggleDarkMode()" class="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500">
+          <button onclick="toggleDarkMode()"
+            class="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500">
             <!-- Sol Icon -->
-            <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+              </path>
+            </svg>
             <!-- Luna Icon -->
-            <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+            <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+            </svg>
           </button>
         </div>
       </div>
@@ -88,54 +111,71 @@
 
   <!-- Main Content -->
   <main class="pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto min-h-screen">
-    
+
     <div class="mb-8">
-      <a href="../index.html" class="inline-flex items-center text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors">
-        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+      <a href="../index.html"
+        class="inline-flex items-center text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white transition-colors">
+        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
         Volver al Inicio
       </a>
     </div>
 
     <div class="mb-10">
-      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight mb-3">Conocimiento DNS</h1>
-      <p class="text-lg text-slate-600 dark:text-slate-400">Todo lo que necesitas saber sobre el Domain Name System resumido en una tabla.</p>
+      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight mb-3">Conocimiento DNS
+      </h1>
+      <p class="text-lg text-slate-600 dark:text-slate-200">Todo lo que necesitas saber sobre el Domain Name System
+        resumido en una tabla.</p>
     </div>
 
     <!-- Beautiful Table Container -->
-    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-200 dark:border-slate-700 overflow-hidden">
+    <div
+      class="bg-white dark:bg-slate-800 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-200 dark:border-slate-700 overflow-hidden">
       <div class="overflow-x-auto">
         <table class="w-full text-left border-collapse">
           <thead>
-            <tr class="bg-slate-50 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-700 text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            <tr
+              class="bg-slate-50 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-700 text-xs uppercase tracking-wider text-slate-500 dark:text-slate-200">
               <th class="py-4 px-6 font-semibold">Pregunta</th>
               <th class="py-4 px-6 font-semibold">Respuesta</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-100 dark:divide-slate-700/50 text-sm md:text-base">
-            
+
             <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
-              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200 w-1/3">¿Qué es un nombre de dominio?</td>
-              <td class="py-4 px-6 text-slate-600 dark:text-slate-400">Un nombre de dominio es la dirección fácil de recordar que identifica un sitio o servicio en Internet, por ejemplo: google.com. Este nombre se traduce a una dirección IP mediante DNS.</td>
+              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200 w-1/3">¿Qué es un nombre de dominio?
+              </td>
+              <td class="py-4 px-6 text-slate-600 dark:text-slate-200">Un nombre de dominio es la dirección fácil de
+                recordar que identifica un sitio o servicio en Internet, por ejemplo: google.com. Este nombre se traduce
+                a una dirección IP mediante DNS.</td>
             </tr>
-            
+
             <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
               <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Qué es un servidor DNS?</td>
-              <td class="py-4 px-6 text-slate-600 dark:text-slate-400">Un servidor DNS es un servidor encargado de traducir nombres de dominio a direcciones IP y viceversa.</td>
+              <td class="py-4 px-6 text-slate-600 dark:text-slate-200">Un servidor DNS es un servidor encargado de
+                traducir nombres de dominio a direcciones IP y viceversa.</td>
             </tr>
-            
+
             <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
-              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Cuál es la función principal del DNS en una red?</td>
-              <td class="py-4 px-6 text-slate-600 dark:text-slate-400">La función principal del DNS es convertir nombres de dominio legibles para humanos en direcciones IP que las computadoras utilizan para comunicarse.</td>
+              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Cuál es la función principal del DNS
+                en una red?</td>
+              <td class="py-4 px-6 text-slate-600 dark:text-slate-200">La función principal del DNS es convertir nombres
+                de dominio legibles para humanos en direcciones IP que las computadoras utilizan para comunicarse.</td>
             </tr>
-            
+
             <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
-              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Qué problema existiría si no existiera el DNS?</td>
-              <td class="py-4 px-6 text-slate-600 dark:text-slate-400">Sin DNS, las personas tendrían que memorizar direcciones IP para acceder a sitios web, lo que haría Internet mucho más difícil de usar.</td>
+              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Qué problema existiría si no
+                existiera el DNS?</td>
+              <td class="py-4 px-6 text-slate-600 dark:text-slate-200">Sin DNS, las personas tendrían que memorizar
+                direcciones IP para acceder a sitios web, lo que haría Internet mucho más difícil de usar.</td>
             </tr>
-            
+
             <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
-              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">Explique todos los pasos que sigue el DNS para resolver un nombre.</td>
-              <td class="py-4 px-6 text-slate-600 dark:text-slate-400">
+              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">Explique todos los pasos que sigue el
+                DNS para resolver un nombre.</td>
+              <td class="py-4 px-6 text-slate-600 dark:text-slate-200">
                 <ol class="list-decimal pl-5 space-y-1">
                   <li>El usuario escribe un dominio en el navegador.</li>
                   <li>El sistema revisa la caché local.</li>
@@ -150,13 +190,18 @@
             </tr>
 
             <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
-              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Qué es la ICANN y cuál es su función respecto al DNS?</td>
-              <td class="py-4 px-6 text-slate-600 dark:text-slate-400">ICANN significa "Internet Corporation for Assigned Names and Numbers". Es una organización internacional cuya función es coordinar y administrar el sistema global de nombres de dominio y direcciones IP para garantizar que Internet funcione correctamente.</td>
+              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Qué es la ICANN y cuál es su función
+                respecto al DNS?</td>
+              <td class="py-4 px-6 text-slate-600 dark:text-slate-200">ICANN significa "Internet Corporation for
+                Assigned Names and Numbers". Es una organización internacional cuya función es coordinar y administrar
+                el sistema global de nombres de dominio y direcciones IP para garantizar que Internet funcione
+                correctamente.</td>
             </tr>
-            
+
             <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
-              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Cuáles son los ataques más comunes a un DNS?</td>
-              <td class="py-4 px-6 text-slate-600 dark:text-slate-400">
+              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Cuáles son los ataques más comunes a
+                un DNS?</td>
+              <td class="py-4 px-6 text-slate-600 dark:text-slate-200">
                 <ul class="list-disc pl-5 space-y-1">
                   <li>DNS Spoofing</li>
                   <li>DNS Cache Poisoning</li>
@@ -166,73 +211,99 @@
                 </ul>
               </td>
             </tr>
-            
+
             <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
-              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Qué puerto utiliza DNS por defecto?</td>
-              <td class="py-4 px-6 text-slate-600 dark:text-slate-400">DNS utiliza por defecto el puerto <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-brand-600 dark:text-brand-400 font-mono text-xs">53</span>.</td>
-            </tr>
-            
-            <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
-              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Qué protocolos utiliza DNS para funcionar?</td>
-              <td class="py-4 px-6 text-slate-600 dark:text-slate-400">DNS funciona principalmente con los protocolos UDP y TCP.</td>
-            </tr>
-            
-            <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
-              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Qué es un servidor DNS primario?</td>
-              <td class="py-4 px-6 text-slate-600 dark:text-slate-400">Un servidor DNS primario es el servidor principal que almacena y administra los registros originales de una zona DNS.</td>
-            </tr>
-            
-            <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
-              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Qué es un servidor DNS secundario?</td>
-              <td class="py-4 px-6 text-slate-600 dark:text-slate-400">Un servidor DNS secundario es un servidor de respaldo que mantiene una copia de la información del servidor primario.</td>
-            </tr>
-            
-            <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
-              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Qué es la caché DNS?</td>
-              <td class="py-4 px-6 text-slate-600 dark:text-slate-400">La caché DNS es el almacenamiento temporal de consultas DNS para acelerar futuras búsquedas.</td>
+              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Qué puerto utiliza DNS por defecto?
+              </td>
+              <td class="py-4 px-6 text-slate-600 dark:text-slate-200">DNS utiliza por defecto el puerto <span
+                  class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-brand-600 dark:text-brand-400 font-mono text-xs">53</span>.
+              </td>
             </tr>
 
             <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
-              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Qué comando se utiliza en Windows para consultar información DNS?</td>
-              <td class="py-4 px-6 text-slate-600 dark:text-slate-400">En Windows se utiliza el comando <code class="px-2 py-1 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded text-pink-600 dark:text-pink-400 font-mono text-sm">nslookup</code>.</td>
+              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Qué protocolos utiliza DNS para
+                funcionar?</td>
+              <td class="py-4 px-6 text-slate-600 dark:text-slate-200">DNS funciona principalmente con los protocolos
+                UDP y TCP.</td>
             </tr>
-            
+
             <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
-              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Qué comando equivalente se utiliza en Linux?</td>
-              <td class="py-4 px-6 text-slate-600 dark:text-slate-400">En Linux el comando equivalente más utilizado es <code class="px-2 py-1 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded text-pink-600 dark:text-pink-400 font-mono text-sm">dig</code>.</td>
+              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Qué es un servidor DNS primario?
+              </td>
+              <td class="py-4 px-6 text-slate-600 dark:text-slate-200">Un servidor DNS primario es el servidor principal
+                que almacena y administra los registros originales de una zona DNS.</td>
+            </tr>
+
+            <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
+              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Qué es un servidor DNS secundario?
+              </td>
+              <td class="py-4 px-6 text-slate-600 dark:text-slate-200">Un servidor DNS secundario es un servidor de
+                respaldo que mantiene una copia de la información del servidor primario.</td>
+            </tr>
+
+            <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
+              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Qué es la caché DNS?</td>
+              <td class="py-4 px-6 text-slate-600 dark:text-slate-200">La caché DNS es el almacenamiento temporal de
+                consultas DNS para acelerar futuras búsquedas.</td>
+            </tr>
+
+            <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
+              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Qué comando se utiliza en Windows
+                para consultar información DNS?</td>
+              <td class="py-4 px-6 text-slate-600 dark:text-slate-200">En Windows se utiliza el comando <code
+                  class="px-2 py-1 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded text-pink-600 dark:text-pink-400 font-mono text-sm">nslookup</code>.
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
+              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Qué comando equivalente se utiliza
+                en Linux?</td>
+              <td class="py-4 px-6 text-slate-600 dark:text-slate-200">En Linux el comando equivalente más utilizado es
+                <code
+                  class="px-2 py-1 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded text-pink-600 dark:text-pink-400 font-mono text-sm">dig</code>.
+              </td>
             </tr>
 
             <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
               <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Qué hace el comando nslookup?</td>
-              <td class="py-4 px-6 text-slate-600 dark:text-slate-400">nslookup permite consultar información DNS, como obtener la IP asociada a un dominio.</td>
+              <td class="py-4 px-6 text-slate-600 dark:text-slate-200">nslookup permite consultar información DNS, como
+                obtener la IP asociada a un dominio.</td>
             </tr>
 
             <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
               <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Qué hace el comando dig?</td>
-              <td class="py-4 px-6 text-slate-600 dark:text-slate-400">dig permite realizar consultas DNS detalladas y mostrar información técnica sobre la resolución de nombres.</td>
+              <td class="py-4 px-6 text-slate-600 dark:text-slate-200">dig permite realizar consultas DNS detalladas y
+                mostrar información técnica sobre la resolución de nombres.</td>
             </tr>
 
             <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
-              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Qué diferencias existen entre DNS público y DNS privado?</td>
-              <td class="py-4 px-6 text-slate-600 dark:text-slate-400">
+              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Qué diferencias existen entre DNS
+                público y DNS privado?</td>
+              <td class="py-4 px-6 text-slate-600 dark:text-slate-200">
                 <ul class="list-disc pl-5 space-y-1">
                   <li><strong>DNS público:</strong> accesible para cualquier usuario en Internet.</li>
                   <li><strong>DNS privado:</strong> utilizado dentro de redes internas y no accesible públicamente.</li>
                 </ul>
               </td>
             </tr>
-            
+
             <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
-              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">Menciona dos servidores DNS públicos populares.</td>
+              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">Menciona dos servidores DNS públicos
+                populares.</td>
               <td class="py-4 px-6 text-slate-600 dark:text-slate-400">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 mr-2">Google DNS → 8.8.8.8</span>
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">Cloudflare DNS → 1.1.1.1</span>
+                <span
+                  class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 mr-2">Google
+                  DNS → 8.8.8.8</span>
+                <span
+                  class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">Cloudflare
+                  DNS → 1.1.1.1</span>
               </td>
             </tr>
 
             <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
-              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Cuáles son las reglas para elegir un nombre de dominio?</td>
-              <td class="py-4 px-6 text-slate-600 dark:text-slate-400">
+              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Cuáles son las reglas para elegir un
+                nombre de dominio?</td>
+              <td class="py-4 px-6 text-slate-600 dark:text-slate-200">
                 <ul class="list-disc pl-5 space-y-1">
                   <li>Debe ser único.</li>
                   <li>Fácil de recordar.</li>
@@ -245,18 +316,24 @@
             </tr>
 
             <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
-              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Cómo se registra un nombre de dominio?</td>
-              <td class="py-4 px-6 text-slate-600 dark:text-slate-400">Un dominio se registra mediante una empresa registradora autorizada.</td>
+              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Cómo se registra un nombre de
+                dominio?</td>
+              <td class="py-4 px-6 text-slate-600 dark:text-slate-200">Un dominio se registra mediante una empresa
+                registradora autorizada.</td>
             </tr>
 
             <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
-              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Cuál es el costo de un dominio web y por cuánto tiempo?</td>
-              <td class="py-4 px-6 text-slate-600 dark:text-slate-400">El costo normalmente varía entre 10 y 50 USD al año, dependiendo de la extensión y el proveedor. Generalmente se registra por 1 año, aunque puede pagarse por varios años.</td>
+              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Cuál es el costo de un dominio web y
+                por cuánto tiempo?</td>
+              <td class="py-4 px-6 text-slate-600 dark:text-slate-200">El costo normalmente varía entre 10 y 50 USD al
+                año, dependiendo de la extensión y el proveedor. Generalmente se registra por 1 año, aunque puede
+                pagarse por varios años.</td>
             </tr>
 
             <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors group">
-              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Cuál es el proceso y los requisitos para adquirir uno?</td>
-              <td class="py-4 px-6 text-slate-600 dark:text-slate-400">
+              <td class="py-4 px-6 font-medium text-slate-900 dark:text-slate-200">¿Cuál es el proceso y los requisitos
+                para adquirir uno?</td>
+              <td class="py-4 px-6 text-slate-600 dark:text-slate-200">
                 <ol class="list-decimal pl-5 space-y-1">
                   <li>Elegir un nombre disponible.</li>
                   <li>Seleccionar una extensión (.com, .net, etc.).</li>
@@ -267,7 +344,7 @@
                 </ol>
               </td>
             </tr>
-            
+
           </tbody>
         </table>
       </div>
@@ -282,4 +359,5 @@
   </footer>
 
 </body>
+
 </html>
